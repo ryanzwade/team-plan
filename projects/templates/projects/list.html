@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project List</title>
 </head>
 <body>
     <main>
@@ -13,7 +13,7 @@
             <h1>My Projects</h1>
             {% if not project_list %}
             <p>You are not assigned to any projects</p>
-            {% elif user.is_authenticated %}
+            {% else %}
                 <table>
                     <thread>
                         <tr>
@@ -24,7 +24,7 @@
                 <tbody>
                     <tr>
                         <td>{{ project.name }}</td>
-                        <td></td>
+                        <td>{{ project.tasks.all|length }}/td>
                 </tbody>
                     </tr>
             {% endif %}
