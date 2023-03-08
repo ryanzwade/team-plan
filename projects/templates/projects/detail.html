@@ -10,11 +10,11 @@
     <main>
         <div>
 
+            {% for project in show_projects %}
+            <a href="{% url 'show_project' %}">{{ project.name }}</a>
+            <h1>{{ project.name }}</h1>
 
             <h2>Tasks</h2>
-
-            <a href={% url "create_task" %}>Create a new task</a>
-
             <table>
                 <thread>
                     <tr>
@@ -28,15 +28,15 @@
                 <tbody>
 
                     <tr>
-                        <td>{{ task.name }}</td>
-                        <td>{{ task.assignee }}</td>
-                        <td>{{ task.start_date }}</td>
-                        <td>{{ task.due_date }}</td>
-                        <td>{{ task.is_completed|yesno:"Yes,No" }}</td>
+                        <td>{{ project.name }}</td>
+                        <td>{{ project.assignee }}</td>
+                        <td>{{ project.start_date }}</td>
+                        <td>{{ project.due_date }}</td>
+                        <td>{{ project.is_completed|yesno:"Yes,No" }}</td>
                     </tr>
 
                     <p>This project has no tasks</p>
-
+            {% endfor %}
                 </tbody>
                 </table>
         </div>
