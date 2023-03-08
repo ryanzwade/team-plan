@@ -31,7 +31,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect("user_login")
+    return redirect("login")
 
 
 def user_signup(request):
