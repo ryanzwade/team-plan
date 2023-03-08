@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
-</head>
+    <title>Project List</title>
+</head> -->
 <body>
     <main>
         <div>
-
-
-            <h2>Tasks</h2>
+            <h1>My Tasks</h1>
 
             <a href={% url "create_task" %}>Create a new task</a>
 
@@ -19,7 +17,6 @@
                 <thread>
                     <tr>
                         <th>Name</th>
-                        <th>Assignee</th>
                         <th>Start date</th>
                         <th>Due date</th>
                         <th>Is completed</th>
@@ -29,7 +26,6 @@
 
                     <tr>
                         <td>{{ task.name }}</td>
-                        <td>{{ task.assignee }}</td>
                         <td>{{ task.start_date }}</td>
                         <td>{{ task.due_date }}</td>
                         <td>{{ task.is_completed|yesno:"Yes,No" }}</td>
