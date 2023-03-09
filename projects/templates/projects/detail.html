@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Project Details{% endblock title %}
-
+{% block title %}
+    Project Details
+{% endblock title %}
 {% block content %}
     <main>
         <div>
-
             <h1>{{ project.name }}</h1>
-
             <h2>Tasks</h2>
             {% for task in show_project.tasks.all %}
-            <a href={% url "create_task" %}>Create a new task</a>
-
-            <table>
-                <thread>
+                <a href={% url "create_task" %}>Create a new task</a>
+                <table>
+                    <thread>
                     <tr>
                         <th>Name</th>
                         <th>Assignee</th>
@@ -21,21 +19,19 @@
                         <th>Due date</th>
                         <th>Is completed</th>
                     </tr>
-                </thread>
-                <tbody>
-
-                    <tr>
-                        <td>{{ task.name }}</td>
-                        <td>{{ task.assignee }}</td>
-                        <td>{{ task.start_date }}</td>
-                        <td>{{ task.due_date }}</td>
-                        <td>{{ task.is_completed|yesno:"Yes,No" }}</td>
-                    </tr>
-
-                    <p>This project has no tasks</p>
-                {% endfor %}
+                    </thread>
+                    <tbody>
+                        <tr>
+                            <td>{{ task.name }}</td>
+                            <td>{{ task.assignee }}</td>
+                            <td>{{ task.start_date }}</td>
+                            <td>{{ task.due_date }}</td>
+                            <td>{{ task.is_completed|yesno:"Yes,No" }}</td>
+                        </tr>
+                        <p>This project has no tasks</p>
+                    {% endfor %}
                 </tbody>
-                </table>
+            </table>
         </div>
     </main>
 {% endblock content %}
