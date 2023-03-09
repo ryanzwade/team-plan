@@ -9,18 +9,18 @@
             <h1>My Tasks</h1>
             <a href={% url "create_task" %}>Create a new task</a>
             {% if not show_my_tasks %}<p>You have no tasks</p>{% endif %}
-                <table>
-                    <thread>
+            <table>
+                <thread>
+                <tr>
+                    <th>Name</th>
+                    <th>Start date</th>
+                    <th>Due date</th>
+                    <th>Is completed</th>
+                </tr>
+                </thread>
+                <tbody>
                     <tr>
-                        <th>Name</th>
-                        <th>Start date</th>
-                        <th>Due date</th>
-                        <th>Is completed</th>
-                    </tr>
-                    </thread>
-                    <tbody>
-                        <tr>
-                            {% for task in show_my_tasks %}
+                        {% for task in show_my_tasks %}
                             <td>{{ task.name }}</td>
                             <td>{{ task.start_date }}</td>
                             <td>{{ task.due_date }}</td>

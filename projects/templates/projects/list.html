@@ -10,9 +10,7 @@
             <p>
                 <a href={% url "create_project" %}>Create project</a>
             </p>
-            {% if not list_projects %}
-            <p>You are not assigned to any projects</p>
-            {% endif %}
+            {% if not list_projects %}<p>You are not assigned to any projects</p>{% endif %}
             <table>
                 <tr>
                     <th>Name</th>
@@ -20,7 +18,9 @@
                 </tr>
                 {% for project in list_projects %}
                     <tr>
-                        <td><a href="{% url 'show_project' project.id %}">{{ project.name }}</a></td>
+                        <td>
+                            <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+                        </td>
                         <td>{{ project.tasks.all|length }}</td>
                     </tr>
                 {% endfor %}
