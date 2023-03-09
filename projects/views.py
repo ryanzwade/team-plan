@@ -9,9 +9,7 @@ from projects.forms import ProjectForm
 @login_required
 def project_list(request):
     projects = Project.objects.filter(owner=request.user)
-    context = {
-        "list_projects": projects
-    }
+    context = {"list_projects": projects}
     return render(request, "projects/list.html", context)
 
 
