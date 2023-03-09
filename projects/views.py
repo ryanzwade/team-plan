@@ -17,7 +17,7 @@ def project_list(request):
 def show_project(request, id):
     project = Project.objects.get(id=id)
     context = {
-        "show_project": project,
+        "project": project,
     }
     return render(request, "projects/detail.html", context)
 
