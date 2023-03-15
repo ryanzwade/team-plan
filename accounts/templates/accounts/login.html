@@ -5,7 +5,9 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
+        {% load static %}
+        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="center">
+        <div class="login-form">
             <h1>Login</h1>
             <form method="post">
                 {% csrf_token %}

@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/tpfav.png' %}"/>
+        <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,4 +44,14 @@
         {% block content %}
         {% endblock content %}
     </body>
+    <div id="footer">
+    <footer>
+
+        <!-- <img src="{% static 'images/tpfav.png' %}" alt="My image"  class="footimage"> -->
+
+        <li>TEAMPLAN Project Management Solutions</li>
+        <li>rev 2023.3.14</li>
+
+    </footer>
+    </div>
 </html>

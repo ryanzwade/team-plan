@@ -5,11 +5,15 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
+        {% load static %}
+        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="center">
+        <div class="project-list">
             <h1>My Projects</h1>
+            <div>
             <p>
                 <a href={% url "create_project" %}>Create project</a>
             </p>
+            </div>
             {% if not list_projects %}<p>You are not assigned to any projects</p>{% endif %}
             <table>
                 <tr>

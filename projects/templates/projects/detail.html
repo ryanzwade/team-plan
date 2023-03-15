@@ -5,7 +5,9 @@
 {% endblock title %}
 {% block content %}
     <main>
-        <div>
+        {% load static %}
+        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="center">
+        <div class="project-detail">
             <h1>{{ project.name }}</h1>
             <h2>Tasks</h2>
             {% if task|length == 0 %}<p>This project has no tasks</p>{% endif %}
