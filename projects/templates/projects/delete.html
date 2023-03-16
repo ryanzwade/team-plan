@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    TP Delete Project
+{% endblock title %}
+{% block content %}
+  <main>
+    <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="app_name">
+    <div>
+      <h1>Are you sure you want to delete this project?</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Delete</button>
+      </form>
+    </div>
+  </main>
+{% endblock content %}

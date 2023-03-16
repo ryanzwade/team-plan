@@ -11,10 +11,8 @@ def create_task(request):
         if form.is_valid():
             form.save()
             return redirect("list_projects")
-
     else:
         form = TaskForm()
-
     context = {
         "form": form,
     }
@@ -28,3 +26,18 @@ def show_my_tasks(request):
         "show_my_tasks": tasks,
     }
     return render(request, "tasks/mine.html", context)
+
+
+def update_task(request, id):
+    task = Task.objects.get(id=id)
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            task = form.save()
+            return redirect("show_project", id=task.project.id)
+    else:
+        form = TaskForm(instance=task)
+    context = {
+        "form": form,
+    }
+    return render(request, "tasks/update.html", context)
