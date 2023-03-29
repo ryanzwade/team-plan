@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Project Details
+    TP Project Details
 {% endblock title %}
 {% block content %}
     <main>
         {% load static %}
-        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="center">
+        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="app_name">
         <div class="project-detail">
             <h1>{{ project.name }}</h1>
             <h2>Tasks</h2>
-            {% if task|length == 0 %}<p>This project has no tasks</p>{% endif %}
+            {% for project in project.project %}
+            <a href="{% url "delete_project" projects.id %}">Delete Project</a>
+            {% endfor %}
             <a href={% url "create_task" %}>Create a new task</a>
             <table>
                 <thread>

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 /* Set all elements to use the Open Sans font */
 body, input, textarea, button, select {
@@ -6,17 +6,13 @@ body, input, textarea, button, select {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  color: rgb(28, 39, 39);
-  overflow: auto;
 }
 
 /* Set the background color of all pages */
 html, body {
-  background-color: #DDD0C8;
+  background-color: #F2F2F2;
 }
-a:hover {
-    background-color: #E5EDF1;
-  }
+
 /* Set the style of the navigation list */
 header nav ul {
   background-color: white;
@@ -26,18 +22,15 @@ header nav ul {
   margin-top: 0;
   margin-bottom: 2em;
   padding: 0 0 0 1em;
-
+}
+html, body {
+  background-color: #DDD0C8;
 }
 
-/* Set the spacing and layout of the nav list items */
-header nav ul li {
-  display: inline-block;
-  margin: 0 1em;
-  padding: 1em 0 1em 0;
-
+a:hover {
+    background-color: #E5EDF1;
 }
 
-/* Set the style of the links in the nav */
 header {
   font-weight: bold;
   text-decoration: none;
@@ -45,16 +38,29 @@ header {
 a:link {
     text-decoration: none;
     font-weight: bold;
+    color: rgb(99, 48, 53);
  }
 a:visited {
     text-decoration: none;
     color: rgb(99, 48, 53);
  }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+
+
+
+/* Set the spacing and layout of the nav list items */
+header nav ul li {
+  display: inline-block;
+  margin: 0 1em;
+  padding: 1em 0 1em 0;
+}
+
+/* Set the style of the links in the nav */
+header nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+}
 
 /* Make the input tags look nicer */
-
 input {
   height: 1.5em;
   margin: 0;
@@ -152,7 +158,6 @@ table {
 .signup-form button,
 .project-form button {
   padding: 0.25em 1em;
-
 }
 
 /* Add a nice box around the lists and details */
@@ -174,8 +179,7 @@ table {
 .project-list td,
 .project-detail th,
 .project-detail td {
-  padding: 5em;
-
+  padding: .5em;
 }
 
 /* Add a bottom border to the table header tags */
@@ -205,15 +209,40 @@ table {
 }
 
 footer {
-  line-height: 1.35em;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  background:#323232;
-  padding: 2em;
-  color: #ffffff
-
+bottom: 0;
+left: 0;
+right: 0;
+position: fixed;
+z-index: 9999;
+background-color: #323232;
+padding: 1em;
+color: #ffffff;
+line-height: 1.35em;
 }
+
 li {
   list-style-type: none;
+}
+
+.app_name {
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+
+}
+
+.left {
+  text-align:left;
+  float:left;
+  line-height: 1.25em;
+}
+
+.right {
+  text-align:right;
+  float:right;
+
+
+
 }

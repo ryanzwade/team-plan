@@ -39,3 +39,11 @@ def create_project(request):
         "form": form,
     }
     return render(request, "projects/create.html", context)
+
+
+def delete_project(request, id):
+    if request.method == "POST":
+        project = Project.objects.get(id=id)
+        project.delete()
+        return redirect("list_projects")
+    return render(request, "projects/delete.html")

@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    My Tasks
+    My TeamPlan Tasks
 {% endblock title %}
 {% block content %}
     <main>
         {% load static %}
-        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="center">
+        <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="app_name">
         <div class="my-tasks-list">
             <h1>My Tasks</h1>
             <a href={% url "create_task" %}>Create a new task</a>
+            <p>Click Task Name to update</p>
+
             {% if not show_my_tasks %}<p>You have no tasks</p>{% endif %}
             <table>
                 <thread>
@@ -23,6 +25,7 @@
                 <tbody>
                     <tr>
                         {% for task in show_my_tasks %}
+                        <td><a href="{% url 'update_task' task.id %}">{{ task.name }}</a></td>
                             <td>{{ task.name }}</td>
                             <td>{{ task.start_date }}</td>
                             <td>{{ task.due_date }}</td>

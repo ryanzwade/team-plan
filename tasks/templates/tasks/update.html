@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    TP Create Task
+    Update TP Task
 {% endblock title %}
 {% block content %}
     <main>
         {% load static %}
         <img src="{% static '/images/teamplan.logo.png' %}" alt="My image" class="app_name">
         <div class="task-form">
-            <h1>Create a new task</h1>
+            {% for project in projects %}
+            <h1>{{ project.name }}</h1>
+            {% endfor %}
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button>Create</button>
+                <button>Update</button>
+
             </form>
         </div>
     </main>
