@@ -10,8 +10,19 @@ body, input, textarea, button, select {
 
 /* Set the background color of all pages */
 html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   background-color: #F2F2F2;
 }
+
+main {
+  flex: 1;
+  padding: 1em;
+}
+
 
 /* Set the style of the navigation list */
 header nav ul {
@@ -209,15 +220,21 @@ table {
 }
 
 footer {
-bottom: 0;
-left: 0;
-right: 0;
-position: fixed;
-z-index: 9999;
-background-color: #323232;
-padding: 1em;
-color: #ffffff;
-line-height: 1.35em;
+  margin-top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #323232;
+  padding: 1em;
+  color: #ffffff;
+  line-height: 1.35em;
+  background-color: #323232;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 li {
@@ -225,12 +242,12 @@ li {
 }
 
 .app_name {
+  max-width: 90%;
+  height: auto;
   display: block;
-  width: 40%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2em;
-
+  padding: 2em;
 }
 
 .left {

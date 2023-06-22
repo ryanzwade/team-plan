@@ -1,54 +1,58 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% load static %}
-        <link rel="shortcut icon" type="image/png" href="{% static 'images/tpfav.png' %}"/>
-        <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {% block title %}
-            {% endblock title %}
-        </title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <a href="{% url 'list_projects' %}">Main page</a>
-                    Hello, {{ user.username }}
-                    {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'show_my_tasks' %}">My tasks</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'list_projects' %}">My projects</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'signup' %}">Sign up</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav>
-        </header>
-        {% block content %}
-        {% endblock content %}
-    </body>
-    <div id="footer">
-    <footer>
-
-        <p class="left"><br/>TEAMPLAN Project Management Solutions<br/>rev 2023.3.14</p>
-        <p class="right"><img src="{% static '/images/new_tp_logo.png' %}" alt="My image">
-    </footer>
+<head>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/tpfav.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <a href="{% url 'list_projects' %}">Main page</a>
+            Hello, {{ user.username }}
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'show_my_tasks' %}">My tasks</a>
+                </li>
+                <li>
+                    <a href="{% url 'list_projects' %}">My projects</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'signup' %}">Sign up</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock content %}
+</main>
+<footer>
+    <div class="footer-content">
+        <p class="left">
+            <br/>TEAMPLAN Project Management Solutions<br/>rev 2023.3.14
+        </p>
+        <p class="right">
+            <img src="{% static '/images/new_tp_logo.png' %}" alt="My image">
+        </p>
     </div>
+</footer>
+</body>
 </html>
